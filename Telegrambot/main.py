@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from telegram import Update, Bot
+from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 from os import environ
 import logging
@@ -36,6 +36,7 @@ def random_fact(update: Update, context: CallbackContext) -> None:
 
 # Функція для команди /start
 def start(update: Update, context: CallbackContext) -> None:
+
     update.message.reply_text('Hello, I am a bot that provides random facts. Use /randomfact to get a fact.')
 
 def main():
