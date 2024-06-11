@@ -1,0 +1,16 @@
+---
+version: '3.3'
+services:
+  funfact:
+    image: mishiklakus/kursova:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: funfact
+    environment:
+      MY_TG_BOT_TOKEN: ${MY_TG_BOT_TOKEN}
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
