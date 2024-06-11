@@ -42,7 +42,7 @@ def start(update: Update, context: CallbackContext) -> None:
 def main():
     # Ваш токен Telegram-бота
     token =environ.get("MY_TG_BOT_TOKEN","define me")
-    updater = Updater(token, use_context=True)
+    updater = Updater(token)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
