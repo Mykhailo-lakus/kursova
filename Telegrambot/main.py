@@ -42,14 +42,18 @@ def start(update: Update, context: CallbackContext) -> None:
 def main():
     # Ваш токен Telegram-бота
     token =environ.get("MY_TG_BOT_TOKEN","define me")
-    updater = Updater(token)
-    dispatcher = updater.dispatcher
+    application = ApplicationBuilder().token(token).build()
 
-    dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CommandHandler("randomfact", random_fact))
+    application.add_handler(CommandHandler("start", start))
+    
 
-    updater.start_polling()
-    updater.idle()
+    # Запускаємо бота
+    
+
+    
+    application.add_handler(CommandHandler("randomfact", random_fact))
+
+    application.run_polling()
 
 if __name__ == '__main__':
     main()
