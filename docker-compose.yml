@@ -4,7 +4,7 @@ services:
   funfact:
     image: mishiklakus/kursova:latest
     build:
-      context: .
+      context:Telegrambot/.
       dockerfile: Dockerfile
     container_name: funfact
     environment:
